@@ -1,0 +1,9 @@
+{
+  "publisher": "vscjava", "name": "vscode-java-pack", "version": "0.31.1",
+  "displayName": "Extension Pack for Java",
+  "description": "Popular extensions for Java development",
+  "categories": ["Programming Languages", "Extension Packs"],
+  "main": "./dist/extension.js",
+  "extensionPack": ["redhat.java", "vscjava.vscode-java-debug", "vscjava.vscode-maven"],
+  "extensionDependencies": ["redhat.java"]
+}

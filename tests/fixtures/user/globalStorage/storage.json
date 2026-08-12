@@ -1,0 +1,22 @@
+{
+  "backupWorkspaces": { "folders": [] },
+  "userDataProfiles": [
+    { "location": "-529b84bd", "name": "Node.js" },
+    {
+      "location": "builtin/agents",
+      "name": "Agents",
+      "useDefaultFlags": {
+        "settings": true, "keybindings": true, "prompts": true, "mcp": true,
+        "languageModels": true, "snippets": true, "tasks": true, "extensions": true
+      }
+    }
+  ],
+  "profileAssociations": {
+    "workspaces": {
+      "file:///Users/x/Scripts": "__default__profile__",
+      "file:///Users/x/Personal/Intern%20Report": "__default__profile__",
+      "file:///Users/x/svc-api": "-529b84bd"
+    }
+  },
+  "windowSplashWorkspaceOverride": {}
+}

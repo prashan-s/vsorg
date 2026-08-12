@@ -1,0 +1,14 @@
+[
+  {
+    "identifier": { "id": "golang.go", "uuid": "d6f6cfea-4b6f-41f4-b571-6ad2ab7918da" },
+    "version": "0.52.2",
+    "relativeLocation": "golang.go-0.52.2",
+    "metadata": { "installedTimestamp": 1748940549947, "pinned": false, "source": "gallery" }
+  },
+  {
+    "identifier": { "id": "esbenp.prettier-vscode" },
+    "version": "11.0.0",
+    "relativeLocation": "esbenp.prettier-vscode-11.0.0",
+    "metadata": { "installedTimestamp": 1748940549947 }
+  }
+]
