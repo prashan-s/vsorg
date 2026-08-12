@@ -21,7 +21,7 @@ Use it to:
 
 ## Install
 
-Install the latest release on macOS or Linux:
+Install the latest release on Apple Silicon macOS, x86_64 Linux, or ARM64 Linux:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/prashan-s/vsorg/main/install.sh | sh
@@ -30,7 +30,8 @@ curl -fsSL https://raw.githubusercontent.com/prashan-s/vsorg/main/install.sh | s
 The installer verifies the release checksum and installs `vsorg` to `~/.local/bin`. Override the
 destination with `VSORG_INSTALL_DIR=/path/to/bin`. Ensure that directory is on `PATH`.
 
-Each push to `main` publishes a versioned GitHub Release automatically.
+CI runs on every push to `main`. A release is published automatically when `version` in
+`Cargo.toml` is a new [Semantic Version](https://semver.org/) and is tagged `v<version>`.
 
 To build from source, Rust 1.74+ is required:
 
