@@ -104,3 +104,4 @@ jobs:
           files: |
             artifacts/*.tar.gz
             SHA256SUMS
+            install.sh
