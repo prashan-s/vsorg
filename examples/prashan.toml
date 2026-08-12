@@ -1,0 +1,151 @@
+# Five-profile partition, drawn where a real 59-extension install actually clusters.
+#
+# The axis is stack / workspace type, not paradigm: extensions bind to toolchains, language
+# servers and project layouts, and a profile activates per window. Four or five is the practical
+# ceiling — each switch reloads the window, so an eight-profile split you traverse three times an
+# hour is worse than no split at all.
+#
+# NOTE ON TOML ORDER: `base` must stay above `[meta]`. Keys written after a table header belong
+# to that table, so `base` under `[meta]` would silently become `meta.base`. vsorg errors on that
+# rather than reconciling against a manifest that does not mean what it says.
+
+# ---------------------------------------------------------------------------------------------
+# base — unioned into every profile.
+#
+# Profiles do not inherit in VS Code, so this is the whole point of the manifest: declared once
+# here, materialised into all five, and re-materialised whenever it changes.
+# ---------------------------------------------------------------------------------------------
+base = [
+  # version control + hygiene
+  "eamodio.gitlens",
+  "editorconfig.editorconfig",
+  "streetsidesoftware.code-spell-checker",
+  "wayou.vscode-todo-highlight",
+  "nhoizey.gremlins",
+
+  # appearance + navigation
+  "pkief.material-icon-theme",
+  "rhalaly.scope-to-this",
+  "zeithaste.cursorcharcode",
+
+  # assistants — auth-gated, expect a re-sign-in in each profile
+  "anthropic.claude-code",
+  "openai.chatgpt",
+
+  # scratch execution + snippets, language-agnostic
+  "formulahendry.code-runner",
+  "vscode-snippet.snippet",
+
+  # diagrams
+  "hediet.vscode-drawio",
+  "nopeslide.vscode-drawio-plugin-mermaid",
+]
+
+# Installed but deliberately unassigned. Listing them here keeps `doctor` quiet without
+# smuggling them into a profile.
+ignore = [
+  # Redundant with hediet.vscode-drawio — two drawio integrations racing for the same files.
+  "zhfjyq.vscode-plugin-drawio",
+  # Leftover folder from a Java pack member that is no longer referenced by any profile.
+  "vscjava.vscode-java-upgrade",
+]
+
+[meta]
+version = 1
+
+# ---------------------------------------------------------------------------------------------
+# Default cannot be deleted, so it becomes the minimal / no-project profile: base only.
+# `prune = true` is what strips the 48 extensions currently piled into it.
+# ---------------------------------------------------------------------------------------------
+[profiles.default]
+description = "Minimal — notes, config files, no project"
+extensions = []
+prune = true
+
+[profiles.ios]
+description = "Swift / iOS via SweetPad"
+prune = true
+shared = ["keybindings", "snippets"]
+extensions = [
+  "sweetpad.sweetpad",
+  "swiftlang.swift-vscode",
+  "vadimcn.vscode-lldb",
+  "llvm-vs-code-extensions.lldb-dap",
+]
+
+[profiles.jvm]
+description = "Java / Kotlin — Maven and Gradle"
+prune = true
+shared = ["keybindings", "snippets"]
+# vscjava.vscode-java-pack is omitted and its members pinned instead: the pack ID never
+# round-trips through --list-extensions, so a manifest naming it can never verify clean.
+extensions = [
+  "redhat.java",
+  "vscjava.vscode-java-debug",
+  "vscjava.vscode-java-dependency",
+  "vscjava.vscode-java-test",
+  "vscjava.vscode-maven",
+  "vscjava.vscode-gradle",
+  "vscjava.migrate-java-to-azure",
+]
+
+[profiles.web]
+description = "TypeScript / React / Node — front end and API work"
+prune = true
+shared = ["keybindings", "snippets"]
+extensions = [
+  "dbaeumer.vscode-eslint",
+  "esbenp.prettier-vscode",
+  "styled-components.vscode-styled-components",
+  "xabikos.javascriptsnippets",
+  "christian-kohler.npm-intellisense",
+  "orta.vscode-jest",
+  "mikestead.dotenv",
+  "ritwickdey.liveserver",
+  "firefox-devtools.vscode-firefox-debug",
+  "thebestnom.auto-attach-child-processes",
+  "humao.rest-client",
+]
+
+[profiles.systems]
+description = "C/C++, Go, Python — compiled and scripted native work"
+prune = true
+shared = ["keybindings", "snippets"]
+# ms-vscode.cpptools-extension-pack is omitted, members pinned. ms-python.python and
+# ms-vscode.cmake-tools are kept: unlike the pure packs they are real extensions that happen to
+# declare a pack, so their members are pinned *alongside* them, not instead of them.
+extensions = [
+  # C / C++
+  "ms-vscode.cpptools",
+  "ms-vscode.cpptools-themes",
+  "ms-vscode.cpp-devtools",
+  "ms-vscode.cmake-tools",
+  "twxs.cmake",
+  "ms-vscode.makefile-tools",
+
+  # Go
+  "golang.go",
+
+  # Python
+  "ms-python.python",
+  "ms-python.vscode-pylance",
+  "ms-python.debugpy",
+  "ms-python.autopep8",
+  "ms-python.vscode-python-envs",
+
+  # local data poking, which is where this work actually lands
+  "alexcvzz.vscode-sqlite",
+  "mechatroner.rainbow-csv",
+  "repreng.csv",
+]
+
+[profiles.infra]
+description = "Docker, Compose, YAML, remote containers"
+prune = true
+shared = ["keybindings", "snippets"]
+extensions = [
+  "ms-azuretools.vscode-docker",
+  "ms-azuretools.vscode-containers",
+  "ms-vscode-remote.remote-containers",
+  "redhat.vscode-yaml",
+]
