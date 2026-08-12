@@ -1,0 +1,8 @@
+{
+  "publisher": "eamodio", "name": "gitlens", "version": "2025.1.0",
+  "displayName": "GitLens — Git supercharged",
+  "description": "Supercharge Git within VS Code",
+  "categories": ["Other", "SCM Providers"],
+  "keywords": ["git", "blame", "multi-root ready"],
+  "main": "./dist/gitlens.js"
+}

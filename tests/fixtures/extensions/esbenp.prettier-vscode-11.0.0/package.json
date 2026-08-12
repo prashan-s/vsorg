@@ -1,0 +1,7 @@
+{
+  "publisher": "esbenp", "name": "prettier-vscode", "version": "11.0.0",
+  "displayName": "Prettier - Code formatter",
+  "description": "Code formatter using prettier",
+  "categories": ["Formatters"],
+  "main": "./out/extension.js"
+}

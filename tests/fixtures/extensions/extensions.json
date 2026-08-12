@@ -1,0 +1,21 @@
+[
+  {
+    "identifier": { "id": "eamodio.gitlens", "uuid": "4de763bd-505d-4978-9575-2b7696ecf94e" },
+    "version": "2025.1.0",
+    "location": { "$mid": 1, "path": "/Users/x/.vscode/extensions/eamodio.gitlens-2025.1.0", "scheme": "file" },
+    "relativeLocation": "eamodio.gitlens-2025.1.0",
+    "metadata": { "installedTimestamp": 1748940549947, "pinned": false, "source": "gallery", "isPreReleaseVersion": false }
+  },
+  {
+    "identifier": { "id": "vscjava.vscode-java-pack", "uuid": "1b8c8f0a-0000-0000-0000-000000000000" },
+    "version": "0.31.1",
+    "relativeLocation": "vscjava.vscode-java-pack-0.31.1",
+    "metadata": { "installedTimestamp": 1748940549947, "pinned": false, "source": "gallery" }
+  },
+  {
+    "identifier": { "id": "EsBenP.Prettier-VSCode" },
+    "version": "11.0.0",
+    "relativeLocation": "esbenp.prettier-vscode-11.0.0",
+    "metadata": { "installedTimestamp": 1748940549947 }
+  }
+]

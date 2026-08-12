@@ -1,0 +1,12 @@
+{
+  "publisher": "golang", "name": "go", "version": "0.52.2",
+  "displayName": "Go",
+  "description": "Rich Go language support for Visual Studio Code",
+  "categories": ["Programming Languages", "Debuggers"],
+  "keywords": null,
+  "main": "./dist/goMain.js",
+  "contributes": {
+    "languages": [{ "id": "go" }, { "id": "gotmpl" }],
+    "debuggers": [{ "type": "go" }]
+  }
+}
