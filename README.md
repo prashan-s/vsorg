@@ -30,6 +30,8 @@ curl -fsSL https://raw.githubusercontent.com/prashan-s/vsorg/main/install.sh | s
 The installer verifies the release checksum and installs `vsorg` to `~/.local/bin`. Override the
 destination with `VSORG_INSTALL_DIR=/path/to/bin`. Ensure that directory is on `PATH`.
 
+Each push to `main` publishes a versioned GitHub Release automatically.
+
 To build from source, Rust 1.74+ is required:
 
 ```bash
