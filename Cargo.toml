@@ -1,0 +1,36 @@
+[package]
+name = "vscode-organizer"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+description = "Declarative VS Code profile manager — profiles as build artifacts from a TOML manifest"
+repository = "https://github.com/prashan-s/vscode-organizer"
+license = "MIT"
+readme = "README.md"
+keywords = ["vscode", "profiles", "extensions", "dotfiles"]
+categories = ["command-line-utilities", "development-tools"]
+
+[lib]
+name = "vscode_organizer"
+path = "src/lib.rs"
+
+[[bin]]
+name = "vsorg"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+dirs = "5"
+flate2 = "1"
+owo-colors = "4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sysinfo = { version = "0.32", default-features = false, features = ["system"] }
+tar = "0.4"
+toml = "0.8"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
